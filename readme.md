@@ -6,13 +6,13 @@
   - [Installating Office 365](#installating-office-365)
   - [Activating Windows Product](#activating-windows-product)
   - [Package Manager for Windows](#package-manager-for-windows)
-  - [Media Player](#media-player)
-    - [MPV](#mpv)
-  - [Archive File Managers](#archive-file-managers)
   - [Web Browser](#web-browser)
     - [How do we choose a browser?](#how-do-we-choose-a-browser)
     - [What is recommended?](#what-is-recommended)
     - [Recommended Extensions](#recommended-extensions)
+  - [Media Player](#media-player)
+    - [MPV](#mpv)
+  - [Archive File Managers](#archive-file-managers)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -69,29 +69,6 @@ Windows has two widely used package managers.
 Installting Chocolatey: https://chocolatey.org/install
 For Packages and other details: https://community.chocolatey.org/
 
-## Media Player
-It's very obvious that "Media Player" of windows is process heavy and does not even play all types of video/audio files.
-- VLC media player
-- MPV
-Now that we have our package manager ready, we can easily install them with single line commands.
-- Installing VLC: `choco install vlc`
-- Installing mpv: `choco install mpv`
-[Recommended MPV]
-### MPV
-It's an open source project that supports almost all formats and codecs. It's a customizable media player. You can use lua scripting to change and modify the GUI as you wish.
-
-- MPV Frontends: https://github.com/mpv-player/mpv/wiki/Applications-using-mpv
-- UOSC: https://github.com/tomasklaen/uosc
-
-There may be other media players out there but these are the most used and community friendly.
-
-## Archive File Managers
-Most common thing found in the internet, archives [zip/rar]. Most used tools: 
-- winrar: Propreitary/Freeware, not recommended
-- 7zip: Open Source, highly recommended
-
-Installing 7zip: `choco install 7zip`
-
 ## Web Browser
 When it comes to web browser, people prefer chrome due to it's ease of access and much more features such as translation etc. Little do we know that Firefox and Other browsers do provide the same features.
 
@@ -133,6 +110,29 @@ It is recommended to use [Firefox](https://www.mozilla.org/en-US/firefox/new/). 
 - [Tab Stash](https://josh-berry.github.io/tab-stash/)
 - [Turbo Download Manager](https://webextension.org/listing/turbo-download-manager-v2.html)
 - [Tampermonkey](https://www.tampermonkey.net/): Run own scripts in browser
+
+## Media Player
+It's very obvious that "Media Player" of windows is process heavy and does not even play all types of video/audio files.
+- VLC media player
+- MPV
+Now that we have our package manager ready, we can easily install them with single line commands.
+- Installing VLC: `choco install vlc`
+- Installing mpv: `choco install mpv`
+[Recommended]
+### MPV
+It's an open source project that supports almost all formats and codecs. It's a customizable media player. You can use lua scripting to change and modify the GUI as you wish.
+
+- MPV Frontends: https://github.com/mpv-player/mpv/wiki/Applications-using-mpv
+- UOSC: https://github.com/tomasklaen/uosc
+
+There may be other media players out there but these are the most used and community friendly.
+
+## Archive File Managers
+Most common thing found in the internet, archives [zip/rar]. Most used tools: 
+- winrar: Propreitary/Freeware, not recommended
+- 7zip: Open Source, highly recommended
+
+Installing 7zip: `choco install 7zip`
 
 ## Contributing
 Feel free to submit pull requests or open issues to suggest improvements or add new setup tips.
