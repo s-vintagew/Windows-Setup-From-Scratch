@@ -11,6 +11,8 @@
   - [Archive File Managers](#archive-file-managers)
   - [Web Browser](#web-browser)
     - [How do we choose a browser?](#how-do-we-choose-a-browser)
+    - [What is recommended?](#what-is-recommended)
+    - [Recommended Extensions](#recommended-extensions)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -101,19 +103,36 @@ Popular Browsers:
 - Brave
 
 Unpopular Browsers:
-- Librefox
+- Librewolf
 - Thorium
 - TOR
 
 ### How do we choose a browser?
 Below are the parameters you can use to choose a browser.
-- Privacy [Does not collect user data]
+- Privacy [Does not collect user data] https://privacytests.org/
 - Ease of Access [Smoothness, UI, etc.]
 - Security [Preventing website tracking]
 - Regular Updates [Stable updates by the developers/companies]
-- Thriving Community [getting easy solutions to bugs and problems in case of mishaps]
+- Thriving Community [getting easy solutions to bugs and problems in case of mishaps] 
 - Resource Consumption [Less Processor Heavy]
 - Extensions [open and wide community developing various extensions for varied usage]
+- Browser Engines. [Firefox has it's own browser engine where edge, brave, chrome runs on chromium engine]
+
+Browser Comparison: https://eylenburg.github.io/browser_comparison.htm
+
+### What is recommended?
+It is recommended to use [Firefox](https://www.mozilla.org/en-US/firefox/new/). You can also try [Librewolf](https://librewolf.net/) [Fork of Firefox and much more secure]. Firefox has a wide variety of Extensions to make your browsing experience smooth, ad-free, secure and many more.
+
+### Recommended Extensions
+- [Ublock Origin](https://ublockorigin.com/)
+- [Sponsorblock](https://github.com/ajayyy/SponsorBlock)
+- [Enhancer for Youtube](https://www.mrfdev.com/enhancer-for-youtube)
+- [Buster](https://github.com/dessant/buster#readme): For Auto-solving Captcha
+- [Search by Image](https://github.com/dessant/search-by-image#readme)
+- [Dark Reader](https://darkreader.org/)
+- [Tab Stash](https://josh-berry.github.io/tab-stash/)
+- [Turbo Download Manager](https://webextension.org/listing/turbo-download-manager-v2.html)
+- [Tampermonkey](https://www.tampermonkey.net/): Run own scripts in browser
 
 ## Contributing
 Feel free to submit pull requests or open issues to suggest improvements or add new setup tips.
