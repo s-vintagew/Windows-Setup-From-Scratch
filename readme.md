@@ -17,6 +17,7 @@
   - [Photo Viewer](#photo-viewer)
   - [Audio Player](#audio-player)
   - [World of Torrent](#world-of-torrent)
+  - [Antivirus](#antivirus)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -184,6 +185,20 @@ Let's start from the basics:
    4. Start the download and you are already torrenting.
 5. Use the specific sites mentioned in Point 3. There are lot many fake/mirror sites out there which are not official.
 
+
+## Antivirus
+For windows you can choose any antivirus in the market. Popular ones being:
+
+1. Norton
+2. Kaspersky
+3. Quick Health
+4. Avast
+
+But the most important thing you need is common sense. Pay attention to:
+
+1. What you explore in the internet, the sites, domains etc.
+2. Stay alert wile copying files and folders from pendrives
+3. Windows Defender is pretty capable enough to block Malwares. If not, run mrt to scan your System thoroughly.
 
 ## Contributing
 Feel free to submit pull requests or open issues to suggest improvements or add new setup tips.
