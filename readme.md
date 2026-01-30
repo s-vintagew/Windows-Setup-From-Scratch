@@ -1,37 +1,43 @@
+# Windows Setup From Scratch
+
+I have faced timeless instances where after installing Windows, I have to sit and recall which software is the most essential and what we damn well need in our daily lives. Starting from media players and image viewers to vcredist for games. There are tons of adware and useless crappy software that just consume your CPU and RAM, resulting in less productivity.
+
+I have tried to jot them all down to help everyone.
+
+**This repo contains:**
+- Microsoft Windows and Office Downloads
+- Essential software to install
+- System configuration steps
+- Useful PowerShell commands
+- Customization tips
+
 ## Contents
 - [Windows Setup From Scratch](#windows-setup-from-scratch)
+  - [Contents](#contents)
   - [Getting Started](#getting-started)
   - [Windows ISO Download](#windows-iso-download)
   - [Windows Installation](#windows-installation)
-  - [Installating Office 365](#installating-office-365)
+  - [Installing Office 365](#installing-office-365)
   - [Activating Windows Product](#activating-windows-product)
   - [Package Manager for Windows](#package-manager-for-windows)
   - [Web Browser](#web-browser)
     - [How do we choose a browser?](#how-do-we-choose-a-browser)
     - [What is recommended?](#what-is-recommended)
     - [Recommended Extensions](#recommended-extensions)
-  - [Video Player](#video-player)
-    - [MPV](#mpv)
+  - [Media Player \& Tools](#media-player--tools)
+    - [The Ultimate Downloader: yt-dlp](#the-ultimate-downloader-yt-dlp)
   - [Archive File Managers](#archive-file-managers)
   - [Visual C++ Redistributable](#visual-c-redistributable)
   - [Photo Viewer](#photo-viewer)
   - [Audio Player](#audio-player)
   - [World of Torrent](#world-of-torrent)
+    - [The Setup](#the-setup)
+    - [⚠️ CRITICAL SAFETY: Bind Your VPN](#️-critical-safety-bind-your-vpn)
+    - [How to Search](#how-to-search)
   - [Antivirus](#antivirus)
+  - [Useful Resources](#useful-resources)
   - [Contributing](#contributing)
   - [License](#license)
-
-# Windows Setup From Scratch
-I have faced timeless instances where after installing windows, I have to sit and recall which softwares are the most essential once and we damn as well need in our daily lives. Starting from media player and image viewer to vcredist for games. There are tonnes of adwares and useless crappy softwares which just consumes your CPU and RAM, resulting in less productivity etc. Well, I have tried to jot them all down so that it helps everyone. 
-
-This repo will contain
-- Microsoft Windows and Offie Downloads
-- Essential software to install
-- System configuration steps
-- Useful PowerShell commands
-- Customization tips
-
-and maybe more.
 
 ## Getting Started
 1. Review the list of recommended software and install as needed.
@@ -39,166 +45,186 @@ and maybe more.
 3. Use the provided scripts and commands to automate setup tasks.
 
 ## Windows ISO Download
-In this step, all you gotta have is one simple PC [borrow from friend or whatever] and follow the steps.
+In this step, all you need is a simple PC (borrow from a friend if needed) and follow the steps.
 
-- ISO file download - https://massgrave.dev/genuine-installation-media. <br> Remember windows comes in 2 editions, consumer and business. For "Windows Home" download the Consumer edition and for "Windows Pro, Workstation or Education" download the Business Edition ISO.
-- Rufus for making it bootable - https://rufus.ie/en/. 
+- **ISO file download:** [Massgrave - Genuine Installation Media](https://massgrave.dev/genuine-installation-media)
+  - *Note:* Windows comes in 2 editions: Consumer and Business.
+  - For "Windows Home", download the **Consumer Edition**.
+  - For "Windows Pro, Workstation, or Education", download the **Business Edition**.
+- **Bootable USB Tool:** [Rufus](https://rufus.ie/en/)
 
-After this all you will need is a Pendrive probably 32GB and you are good to run rufus, select the ISO and you are good to start.
+After downloading, you will need a Pen drive (probably 32GB). Run Rufus, select the ISO, and you are good to start.
 
 ## Windows Installation
-During installation, windows gives you options to install various versions:
-
+During installation, Windows gives you options to install various versions:
 - Windows Home
 - Windows Pro
-- Windows Education
-- Windows Education N
+- Windows Education / Education N
 - Windows Workstation
-  For someone who have less resources such as 8GB RAM and HDD can use https://rentry.co/windows_for_retards as a guide to install windows without telemetry etc for lesser CPU load. 
 
-## Installating Office 365
-Download the img file from https://gravesoft.dev/office_c2r_links
-[Recommended download: O365ProPlusRetail - Offline x32-x64]
+> **Tip:** For hardware with limited resources (e.g., 8GB RAM, HDD), you can use [this guide](https://rentry.co/windows_for_retards) to install Windows without telemetry for lower CPU load.
+
+## Installing Office 365
+Download the img file from [Gravesoft](https://gravesoft.dev/office_c2r_links).
+* **Recommended download:** `O365ProPlusRetail - Offline x32-x64`
 
 ## Activating Windows Product
-Download the file from the github repo: aHR0cHM6Ly9naXRodWIuY29tL2FiYm9kaTE0MDYvS01TX1ZMX0FMTF9BSU8=
-[Turn of the Windows Antivirus real time scanning before downloading and executing the cmd file.]
+Download the file from the GitHub repo: `aHR0cHM6Ly9naXRodWIuY29tL2FiYm9kaTE0MDYvS01TX1ZMX0FMTF9BSU8=` (Decode Base64)
 
-For instruction refer to the link https://rentry.co/windows_for_retards#activation
+> **⚠️ Important:** Turn off Windows Antivirus real-time scanning before downloading and executing the cmd file.
+
+For instructions, refer to: [Activation Guide](https://rentry.co/windows_for_retards#activation)
 
 ## Package Manager for Windows
-Windows has two widely used package managers.
-- Winget: Comes out of the box in Windows 10 and Windows 11.
-- Chocolatey: Can be easily installed.
+Windows has two widely used package managers, plus a community favorite for power users.
 
-Installting Chocolatey: https://chocolatey.org/install
-For Packages and other details: https://community.chocolatey.org/
+- **Winget:** Comes out of the box in Windows 10 and 11.
+- **Chocolatey:** Reliable and widely used.
+- **Scoop:** Installs apps in your user folder (no UAC prompts) and avoids PATH pollution. Great for command-line tools.
+
+**Installing Chocolatey:**
+Visit [chocolatey.org/install](https://chocolatey.org/install)
+
+**Installing Scoop (PowerShell):**
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
 
 ## Web Browser
-When it comes to web browser, people prefer chrome due to it's ease of access and much more features such as translation etc. Little do we know that Firefox and Other browsers do provide the same features.
+When it comes to web browsers, people often default to Chrome. However, Firefox and other browsers provide better privacy and equal features.
 
-Popular Browsers:
+**Popular Browsers:**
 - Firefox
 - Google Chrome
 - Edge
-- Safari
 - Brave
 
-Unpopular Browsers:
-- Librewolf
-- Thorium
-- TOR
+**Privacy-Focused / Niche Browsers:**
+- **Librewolf** (Hardened Firefox fork)
+- **Ungoogled Chromium** (Chrome without the Google tracking)
+- **Thorium** (Performance optimized)
+- **Tor**
 
 ### How do we choose a browser?
-Below are the parameters you can use to choose a browser.
-- Privacy [Does not collect user data] https://privacytests.org/
-- Ease of Access [Smoothness, UI, etc.]
-- Security [Preventing website tracking]
-- Regular Updates [Stable updates by the developers/companies]
-- Thriving Community [getting easy solutions to bugs and problems in case of mishaps] 
-- Resource Consumption [Less Processor and RAM Heavy]
-- Extensions [support for open and wide community developing various extensions for varied usage]
-- Browser Engines. [Firefox has it's own browser engine where edge, brave, chrome runs on chromium engine]
+Below are the parameters you can use to choose a browser:
+- **Privacy:** Does not collect user data. (Test at [PrivacyTests.org](https://privacytests.org/))
+- **Security:** Preventing website tracking and fingerprinting.
+- **Updates:** Regular, stable updates by developers.
+- **Community:** Getting easy solutions to bugs.
+- **Resource Consumption:** RAM and CPU efficiency.
+- **Extensions:** Support for a wide variety of plugins.
+- **Engine:** Gecko (Firefox) vs. Blink (Chromium).
 
-Browser Comparison: https://eylenburg.github.io/browser_comparison.htm
+**Browser Comparison:** [See Comparison Table](https://eylenburg.github.io/browser_comparison.htm)
 
 ### What is recommended?
-It is recommended to use [Firefox](https://www.mozilla.org/en-US/firefox/new/). You can also try [Librewolf](https://librewolf.net/) [Fork of Firefox and much more secure]. Firefox has a wide variety of Extensions to make your browsing experience smooth, ad-free, secure and many more.
+It is recommended to use [Firefox](https://www.mozilla.org/en-US/firefox/new/) or [Librewolf](https://librewolf.net/) (a fork of Firefox that is much more secure). Firefox has a wide variety of extensions to make your browsing experience smooth, ad-free, and secure.
 
 ### Recommended Extensions
-- [Ublock Origin](https://ublockorigin.com/)
-- [Sponsorblock](https://github.com/ajayyy/SponsorBlock)
+- [uBlock Origin](https://ublockorigin.com/) (Essential)
+- [SponsorBlock](https://github.com/ajayyy/SponsorBlock)
 - [Enhancer for Youtube](https://www.mrfdev.com/enhancer-for-youtube)
-- [Buster](https://github.com/dessant/buster#readme): For Auto-solving Captcha
+- [Buster](https://github.com/dessant/buster#readme): Auto-solving Captchas.
 - [Search by Image](https://github.com/dessant/search-by-image#readme)
+- [FastForward](https://fastforward.team/): Bypasses link shorteners.
 - [Dark Reader](https://darkreader.org/)
 - [Tab Stash](https://josh-berry.github.io/tab-stash/)
 - [Turbo Download Manager](https://webextension.org/listing/turbo-download-manager-v2.html)
-- [Tampermonkey](https://www.tampermonkey.net/): Run own scripts in browser
+- [Tampermonkey](https://www.tampermonkey.net/): Run userscripts.
 
-## Video Player
-It's very obvious that "Media Player" of windows is useless and does not even play all types of video/audio files. It's better to use some community preffered, open source/freeware media players
-- VLC media player [Freeware]
-- MPV [Open Source]
-  
-Now that we have our package manager ready, we can easily install them with single line commands.
-- Installing VLC: `choco install vlc`
-- Installing mpv: `choco install mpv`
-[Recommended]
-### MPV
-It's an open source project that supports almost all formats and codecs. It's a customizable media player. You can use lua scripting to change and modify the GUI as you wish.
+## Media Player & Tools
+The default Windows Media Player is limited. Use community-preferred, open-source alternatives.
 
-- MPV Frontends: https://github.com/mpv-player/mpv/wiki/Applications-using-mpv
-- UOSC: https://github.com/tomasklaen/uosc
+- **VLC Media Player** (Classic, reliable)
+- **MPV** (Lightweight, highly customizable, best playback quality)
 
-There may be other media players out there but these are the most used and community friendly.
+**Installation via Chocolatey:**
+```powershell
+choco install vlc
+choco install mpv
+```
+
+**MPV & MPV.net**
+
+MPV is powerful but lacks a GUI menu by default.
+- **[mpv.net](https://github.com/mpvnet-player/mpv.net):** A modern frontend for MPV that adds a right-click menu and settings dialog, making it feel like a native Windows app.
+- **[UOSC](https://github.com/tomasklaen/uosc):** A minimalist UI script for vanilla MPV.
+
+### The Ultimate Downloader: yt-dlp
+For downloading videos/audio from YouTube, Twitch, and thousands of other sites, **yt-dlp** is the gold standard.
+- **Install:** `choco install yt-dlp` or `scoop install yt-dlp`
+- **Note:** You also need **FFmpeg** for it to merge the best quality video and audio streams.
+  - Install command: `choco install ffmpeg`
+- **Usage:** `yt-dlp "LINK"`
 
 ## Archive File Managers
-Most common thing found in the internet, archives [zip/rar]. Most used tools: 
-- winrar: Propreitary/Freeware, not recommended
-- 7zip: Open Source, highly recommended
+- **WinRAR:** Proprietary (Nagware).
+- **7-Zip:** Open Source, highly recommended.
+- **NanaZip:** A modern fork of 7-Zip for Windows 11 context menus.
 
-Installing 7zip: `choco install 7zip`
+**Install:** `choco install 7zip`
 
 ## Visual C++ Redistributable
-Let's say you want to do graphics related stuff. Apart from the graphics driver you would also need visual c++ librarier and DirectX.
+Essential for gaming and graphics work.
 
-Installing vcredist: `choco install vcredist-all`
-<br>
-Installing directX: `choco install directx`
+- **All-in-One Installer:** `choco install vcredist-all`
+- **DirectX:** `choco install directx`
 
 ## Photo Viewer
-Once again, let's not use the crappy windows photo viewer. There are much better and lightwright options available.
+Replace the slow Windows Photos app with lightweight options.
 
-1. JPEGView - `choco install jpegview`
-2. Faststone - `choco install fsviewer`
-
-[JPEGView is recommended for simple viewing and simple photo based tasks]
-
+1. **JPEGView:** Minimalist and fast. `choco install jpegview`
+2. **FastStone Image Viewer:** Feature-rich. `choco install fsviewer`
 
 ## Audio Player
-It is already expected that you will have spotify or youtube for this purpose. Nonetheless if you have downloaded songs and offline playlists, the players mentioned in [Video Player](#video-player) should do the trick.
+1. **MusicBee:** Great for managing large libraries. `choco install musicbee`
+2. **Foobar2000:** Highly modular. `choco install foobar2000`
 
-There are dedicated players available too for audio playback.
-1. MusicBee: `choco install musicbee`
-2. Foobar: `choco install foobar2000`
-   
-Try and use both and keep the one that suits your UI preferences and accessibility.
 
 ## World of Torrent
-This part is a pretty deep rabbit hole, the end of which is not known. With too many branches in the borrow, it's actually difficult to get started and to know, what's safe and how to be safe while torrenting.
+This is a deep rabbit hole. To stay safe, follow these rules.
 
-Let's start from the basics:
-1. You will need to follow the recommended browser options mentioned in [What is recommended?](#what-is-recommended) along with the Ad-Blocker extension [UBlock Origin].
-2. Once that is setup you would need something called a torrent client. This client pulls files from the P2P network [basically a mesh of computers who have a files and are uploading them in parts]. <br> 
-   - Qbittorrent: `choco install qbittorrent` [recommended, easy to use]
-   - Transmission: `choco install transmission` <br>
-  
-    **Dont's:**
-     - Do not Install utorrent or bittorrent. Those were reported to be running crypto mining scripts and flagged as malware.
+### The Setup
+1. **Browser + AdBlocker:** Ensure you are using Firefox + uBlock Origin.
+2. **Torrent Client:**
+   - **qBittorrent:** Open source, clean, no ads. (`choco install qbittorrent`)
+   - **Transmission:** Simple and effective. (`choco install transmission`)
+   - ❌ **Avoid:** uTorrent or BitTorrent (History of adware/miners).
 
-3. Knowing about torrent tracker sites: These sites, list torrents and gives you a tracker file that your client understands. List of well knows torrent tracker sites: https://torrentfreak.com/top-torrent-sites/
-4. How do you search for a torrent file:
-   1. Head over to any tracker site. Example 1337x.to, now search for the file you need, let's say the movie 'How to Train Your Dragon'.
-   2. Once you hit enter, there will be a list of trackers. Now select the one with the quality you need, size you can download and it's seeder:leecher ratio should be >1.
-   3. Now once selected, click that tracker. Once in the next page look for a 'magnet link' or magent symbol and you should be redirected to qbittorrent.
-   4. Start the download and you are already torrenting.
-5. Use the specific sites mentioned in Point 3. There are lot many fake/mirror sites out there which are not official.
+### ⚠️ CRITICAL SAFETY: Bind Your VPN
+If you use a VPN, you **must** bind qBittorrent to the VPN interface.
+1. Open qBittorrent > **Tools** > **Options** > **Advanced**.
+2. Look for **"Network Interface"**.
+3. Change it from "Any interface" to your VPN adapter (e.g., `wg0`, `tun0`, or the name of your VPN driver).
+4. **Why?** If your VPN disconnects, downloads stop instantly. No IP leaks.
 
+### How to Search
+1. Visit a trusted index (e.g., 1337x, TorrentGalaxy).
+2. Search for your file (e.g., "Linux ISOs").
+3. Check the **Seeder/Leecher ratio** (Should be > 1).
+4. Click the **Magnet Link** (🧲) to open directly in your client.
 
 ## Antivirus
-For windows you can choose any antivirus in the market. Popular ones being:
+Common sense is the best antivirus. Windows Defender is usually sufficient for power users.
 
-1. Norton
-2. Kaspersky
-3. Quick Health
-4. Avast
+**Paid Options:**
+- Kaspersky
+- ESET NOD32
+- Quick Heal
 
-But the most important thing you need is common sense. Pay attention to:
+**Best Practices:**
+1. Watch what you click. Check URLs.
+2. Be careful with USB drives.
+3. If suspicious, run a scan with **Malwarebytes** (Free version is a great second opinion scanner).
 
-1. What you explore in the internet, the sites, domains etc.
-2. Stay alert wile copying files and folders from pendrives
-3. Windows Defender is pretty capable enough to block Malwares. If not, run mrt to scan your System thoroughly.
+## Useful Resources
+Here are some excellent wikis and aggregators for finding tools, guides, and safe sources.
+
+- **[FMHY (FreeMediaHeckYeah)](https://fmhy.net/):** The ultimate wiki for piracy, tools, and open-source software. Verified and safe.
+- **[Awesome Lists](https://awesomelists.top/):** A massive collection of "awesome" lists for almost anything (development, platforms, front-ends, etc.).
+- **[Privacy Guides](https://www.privacyguides.org/):** Reliable recommendations for privacy-focused software (browsers, email, VPNs).
+- **[AlternativeTo](https://alternativeto.net/):** Great for finding free/open-source alternatives to expensive proprietary software.
 
 ## Contributing
 Feel free to submit pull requests or open issues to suggest improvements or add new setup tips.
